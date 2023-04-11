@@ -105,8 +105,8 @@
          var canvas2 = document.getElementById('myCanvas2');
          var context2 = canvas2.getContext("2d");
          
-         var imageData = context.getImageData (0, 0, 600, 500);
-         var dataArray = imageData.data;
+         var imageData = context.getImageData(0, 0, 600, 500);
+         var canvasData = imageData.data;
          
          for(var i = 0; i < canvasData.length; i += 4) {
             canvasData[i] = 0; //sets red to 0 so there is no red output
@@ -114,7 +114,7 @@
           
          }
          
-         context2.putImageData (imageData, 0, 0);
+         context2.putImageData(imageData, 0, 0);
         } // end of img.onload
         
         img.src = reader.result;
