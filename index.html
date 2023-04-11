@@ -14,7 +14,7 @@
  
   Authors in chronological order of contribution:
   Author 1: Timothy E. Riedel
-  Author 2: ?????????
+  Author 2: Ayla Amjad
   
   References:
   http://docs.webplatform.org/wiki/concepts/programming/drawing_images_onto_canvas#Loading_the_image_programmatically
@@ -24,10 +24,10 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  blah, blah, blah,
+  The main goal of this code is to display an uploaded image with only blue intensities.
  
   Known Issues:
-  blah, blah, blah, blah
+  There are no known issues in code. 
 -->
 
  <head>
@@ -102,19 +102,19 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-         var canvas2 = document.getElementById('myCanvas2');
-         var context2 = canvas2.getContext("2d");
+         var canvas2 = document.getElementById('myCanvas2'); //links to my second canvas
+         var context2 = canvas2.getContext("2d"); //accesses second canvas on two dimensions
          
-         var imageData = context.getImageData(0, 0, 600, 500);
-         var canvasData = imageData.data;
+         var imageData = context.getImageData(0, 0, 600, 500); //same size as first canvas
+         var canvasData = imageData.data; //stores data in canvas pixels
          
-         for(var i = 0; i < canvasData.length; i += 4) {
+         for(var i = 0; i < canvasData.length; i += 4) { //loop that processes each pixel of image inputted
             canvasData[i] = 0; //sets red to 0 so there is no red output
             canvasData[i + 1] = 0; //sets green to 0 so there is no green output
           
          }
          
-         context2.putImageData(imageData, 0, 0);
+         context2.putImageData(imageData, 0, 0); //displays image on second canvas
         } // end of img.onload
         
         img.src = reader.result;
@@ -153,6 +153,7 @@
         context.fillText("Original image will go here", 10, 20);
       </script>
      
+ //created a second canvas for my blue image to display    
  <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas2 = document.getElementById('myCanvas2');
